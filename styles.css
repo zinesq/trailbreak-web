@@ -70,7 +70,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 60px;
+    padding: 75px 60px;
     max-width: 1560px;
     margin: 0 auto;
 }
@@ -109,7 +109,7 @@ body {
     position: relative;
     z-index: 10;
     text-align: center;
-    padding: 80px 40px 120px;
+    padding: 100px 40px 150px;
 }
 
 /* Title - matching original exactly */
