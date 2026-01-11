@@ -39,6 +39,13 @@ body {
     padding-bottom: 60px;
 }
 
+/* Fullscreen: hero takes full viewport height */
+@media (min-width: 992px) {
+    .hero-bg {
+        min-height: 100vh;
+    }
+}
+
 .hero-bg::before {
     content: '';
     position: absolute;
