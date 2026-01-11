@@ -64,6 +64,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 40px 60px;
+    max-width: 1560px;
+    margin: 0 auto;
 }
 
 .logo-link {
