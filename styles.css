@@ -33,7 +33,7 @@ body {
 .hero-bg {
     background-image: url('images/hero-bg.jpeg');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
     position: relative;
     padding-bottom: 60px;
@@ -71,7 +71,7 @@ body {
 }
 
 .logo {
-    height: 28px;
+    height: 46px;
     width: auto;
 }
 
@@ -113,19 +113,19 @@ body {
 }
 
 .tagline {
-    font-size: 16px;
-    font-weight: 300;
-    opacity: 0.9;
+    font-size: 18px;
+    font-weight: 400;
     max-width: 500px;
-    margin: 0 auto;
-    letter-spacing: 0.02em;
+    margin: 0 auto 32px;
+    letter-spacing: normal;
+    line-height: 1.2;
 }
 
 /* Container */
 .container {
-    max-width: 900px;
+    max-width: 890px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 35px;
 }
 
 /* Services Section */
@@ -146,14 +146,15 @@ body {
 }
 
 .intro-block {
-    margin-bottom: 50px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
 }
 
 /* Services Grid */
 .services-grid {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 50px;
 }
 
 .service-item {
@@ -180,16 +181,16 @@ body {
 }
 
 .service-title {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
     letter-spacing: normal;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .service-desc {
     font-size: 16px;
     font-weight: 400;
-    opacity: 1;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.2;
 }
 
@@ -205,10 +206,10 @@ body {
 }
 
 .etymology {
-    font-size: 13px;
-    line-height: 1.7;
-    opacity: 0.5;
-    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 24px;
 }
 
 .etymology strong {
@@ -216,9 +217,9 @@ body {
 }
 
 .disclaimer {
-    font-size: 12px;
-    line-height: 1.6;
-    opacity: 0.4;
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .disclaimer em {
@@ -307,10 +308,13 @@ body {
 .title,
 .tagline,
 .intro,
-.service-item,
+.service-item {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
 .etymology,
 .disclaimer {
-    opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
