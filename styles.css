@@ -171,10 +171,10 @@ body {
 @media (min-width: 992px) {
     .services-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 400px 400px;
         gap: 40px 60px;
-        max-width: none;
-        margin: 0;
+        max-width: 860px;
+        margin: 0 auto;
     }
 
     .service-item {
