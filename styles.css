@@ -155,7 +155,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    max-width: 380px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -295,11 +295,11 @@ body {
     }
 }
 
-/* Smooth animations on load - matching Webflow */
+/* Smooth animations on load - matching Webflow IX2 style */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 30px, 0);
     }
     to {
         opacity: 1;
@@ -312,20 +312,27 @@ body {
 .intro,
 .service-item {
     opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .etymology,
 .disclaimer {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-.title { animation-delay: 0.1s; }
-.tagline { animation-delay: 0.2s; }
-.intro { animation-delay: 0.3s; }
-.service-item:nth-child(1) { animation-delay: 0.4s; }
-.service-item:nth-child(2) { animation-delay: 0.5s; }
-.service-item:nth-child(3) { animation-delay: 0.6s; }
-.service-item:nth-child(4) { animation-delay: 0.7s; }
-.etymology { animation-delay: 0.8s; }
-.disclaimer { animation-delay: 0.9s; }
+/* Hero section animations */
+.title { animation-delay: 0.2s; }
+.tagline { animation-delay: 0.6s; }
+
+/* Intro section - pause after hero */
+.intro { animation-delay: 1.2s; }
+
+/* Service items - pause after intro, then stagger */
+.service-item:nth-child(1) { animation-delay: 2.0s; }
+.service-item:nth-child(2) { animation-delay: 2.3s; }
+.service-item:nth-child(3) { animation-delay: 2.6s; }
+.service-item:nth-child(4) { animation-delay: 2.9s; }
+
+/* Footer - pause after services */
+.etymology { animation-delay: 3.5s; }
+.disclaimer { animation-delay: 3.8s; }
