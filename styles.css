@@ -1,17 +1,11 @@
+/* Satoshi Font - using Fontshare CDN */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap');
+
 /* Reset and Base */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-/* Satoshi Font - matching original */
-@font-face {
-    font-family: 'Satoshi';
-    src: url('https://cdn.prod.website-files.com/640bcf0a4379a318251a4293/css/../fonts/Satoshi-Variable.woff2') format('woff2');
-    font-weight: 300 900;
-    font-display: swap;
-    font-style: normal;
 }
 
 html {
@@ -69,7 +63,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 60px;
+    padding: 40px 25px;
 }
 
 .logo-link {
@@ -88,9 +82,9 @@ body {
     background-color: transparent;
     color: #fff;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
     border: 1px solid #fff;
     border-radius: 60px;
     transition: all 0.3s ease;
@@ -114,8 +108,8 @@ body {
     font-size: 80px;
     font-weight: 400;
     letter-spacing: -2.4px;
-    margin-bottom: 30px;
-    line-height: 1.1;
+    margin-bottom: 150px;
+    line-height: 112px;
 }
 
 .tagline {
@@ -141,10 +135,10 @@ body {
 }
 
 .intro {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.2;
     margin-bottom: 0;
-    opacity: 0.95;
+    opacity: 1;
 }
 
 .intro strong {
@@ -186,17 +180,17 @@ body {
 }
 
 .service-title {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
     margin-bottom: 8px;
 }
 
 .service-desc {
-    font-size: 14px;
-    font-weight: 300;
-    opacity: 0.7;
-    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+    line-height: 1.2;
 }
 
 .service-desc em {
