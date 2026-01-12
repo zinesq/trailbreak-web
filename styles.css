@@ -328,7 +328,7 @@ body {
     }
 }
 
-/* Smooth animations on load - matching Webflow IX2 style */
+/* Scroll-triggered animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -340,33 +340,21 @@ body {
     }
 }
 
-.title,
-.tagline,
-.intro,
-.service-item {
+/* Elements start hidden */
+.animate-on-scroll {
     opacity: 0;
+    transform: translate3d(0, 30px, 0);
+}
+
+/* When visible, trigger animation */
+.animate-on-scroll.visible {
     animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-.etymology,
-.disclaimer {
-    opacity: 0;
-    animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
+/* Stagger delays for grouped items */
+.service-item.visible:nth-child(1) { animation-delay: 0s; }
+.service-item.visible:nth-child(2) { animation-delay: 0.15s; }
+.service-item.visible:nth-child(3) { animation-delay: 0.3s; }
+.service-item.visible:nth-child(4) { animation-delay: 0.45s; }
 
-/* Hero section animations */
-.title { animation-delay: 0.2s; }
-.tagline { animation-delay: 0.6s; }
-
-/* Intro section - pause after hero */
-.intro { animation-delay: 1.2s; }
-
-/* Service items - pause after intro, then stagger */
-.service-item:nth-child(1) { animation-delay: 2.0s; }
-.service-item:nth-child(2) { animation-delay: 2.3s; }
-.service-item:nth-child(3) { animation-delay: 2.6s; }
-.service-item:nth-child(4) { animation-delay: 2.9s; }
-
-/* Footer - pause after services */
-.etymology { animation-delay: 3.5s; }
-.disclaimer { animation-delay: 3.8s; }
+.disclaimer.visible { animation-delay: 0.15s; }

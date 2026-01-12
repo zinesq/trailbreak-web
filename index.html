@@ -13,7 +13,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
-    <link rel="stylesheet" href="styles.css?v=20">
+    <link rel="stylesheet" href="styles.css?v=21">
 </head>
 <body>
     <div class="page-wrapper">
@@ -29,20 +29,20 @@
 
             <!-- Hero Content -->
             <div class="hero">
-                <h1 class="title">TRAILBREAK</h1>
-                <p class="tagline">Counsel, Ops and Strategic Advice for Frontier Technologists</p>
+                <h1 class="title animate-on-scroll">TRAILBREAK</h1>
+                <p class="tagline animate-on-scroll">Counsel, Ops and Strategic Advice for Frontier Technologists</p>
             </div>
         </div>
 
         <!-- Services Section -->
         <div class="services-section">
             <div class="container">
-                <p class="intro intro-block">
+                <p class="intro intro-block animate-on-scroll">
                     <strong>Trailbreak</strong> is a boutique transactional firm offering sophisticated corporate / regulatory / product / IP counsel, strategic consulting and operational leadership.<br><br><strong>Evan Zinaman, Esq.</strong>, Founder &amp; Principal at Trailbreak, has developed a rare combination of skills that builders value most, with particular expertise in the following practice areas:
                 </p>
 
                 <div class="services-grid">
-                    <div class="service-item">
+                    <div class="service-item animate-on-scroll">
                         <div class="bullet-wrap">
                             <img src="images/bullet-icon.svg" alt="" class="bullet-icon">
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="service-item">
+                    <div class="service-item animate-on-scroll">
                         <div class="bullet-wrap">
                             <img src="images/bullet-icon.svg" alt="" class="bullet-icon">
                         </div>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="service-item">
+                    <div class="service-item animate-on-scroll">
                         <div class="bullet-wrap">
                             <img src="images/bullet-icon.svg" alt="" class="bullet-icon">
                         </div>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
 
-                    <div class="service-item">
+                    <div class="service-item animate-on-scroll">
                         <div class="bullet-wrap">
                             <img src="images/bullet-icon.svg" alt="" class="bullet-icon">
                         </div>
@@ -88,14 +88,34 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p class="etymology">
+                <p class="etymology animate-on-scroll">
                     <strong>Trailbreak</strong> comes from the hiker slang, "to break trail," where one sets out in a lead position through fresh-fallen snow, forging the path for others to follow.
                 </p>
-                <p class="disclaimer">
+                <p class="disclaimer animate-on-scroll">
                     <em>Licensed to practice law in NY (inactive in CA). No attorney-client relationship shall be deemed to exist absent a signed engagement letter. All rights reserved.</em>
                 </p>
             </div>
         </footer>
     </div>
+
+    <script>
+        // Intersection Observer for scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% visible
+            rootMargin: '0px 0px -50px 0px' // Slight offset from bottom
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
