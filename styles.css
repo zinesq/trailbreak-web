@@ -352,7 +352,7 @@ body {
 }
 
 /* Tagline delays after title */
-.tagline.visible { animation-delay: 0.5s; }
+.tagline.visible { animation-delay: 1.0s; }
 
 /* Service items stagger after intro */
 .service-item.visible:nth-child(1) { animation-delay: 0.3s; }
