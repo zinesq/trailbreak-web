@@ -31,31 +31,45 @@ body {
 
 /* Hero Background Section */
 .hero-bg {
-    background-image: url('images/hero-bg.jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-color: #060606;
+    background-image:
+        radial-gradient(1200px 600px at 15% -10%, rgba(56, 152, 236, 0.14) 0%, rgba(6, 6, 6, 0) 60%),
+        radial-gradient(900px 520px at 85% 0%, rgba(42, 76, 94, 0.18) 0%, rgba(6, 6, 6, 0) 55%),
+        linear-gradient(180deg, #050607 0%, #060606 45%, #050708 100%);
     position: relative;
     padding-bottom: 60px;
     min-height: calc(100vh - 60px);
     min-height: calc(100svh - 60px);
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .hero-bg::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500' viewBox='0 0 900 500' fill='none'><path d='M-40 80 C 120 20 260 120 420 70 C 560 30 700 140 940 80' stroke='%23324a55' stroke-width='1.2' opacity='0.7'/><path d='M-40 140 C 120 80 280 190 460 130 C 620 80 740 200 940 150' stroke='%23324a55' stroke-width='1' opacity='0.6'/><path d='M-40 210 C 140 150 300 260 500 210 C 660 170 760 260 940 220' stroke='%23324a55' stroke-width='1.1' opacity='0.6'/><path d='M-40 280 C 120 220 320 330 520 280 C 700 240 780 330 940 290' stroke='%23324a55' stroke-width='1' opacity='0.55'/><path d='M-40 350 C 140 300 340 390 540 350 C 700 320 820 390 940 360' stroke='%23324a55' stroke-width='1.1' opacity='0.5'/><path d='M-40 420 C 160 370 340 460 560 420 C 720 390 840 450 940 430' stroke='%23324a55' stroke-width='1' opacity='0.5'/></svg>");
+    background-size: 900px 500px;
+    background-repeat: repeat;
+    opacity: 0.22;
+    animation: topoDrift 90s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(6, 6, 6, 0.3) 0%,
-        rgba(6, 6, 6, 0.1) 30%,
-        rgba(6, 6, 6, 0.4) 70%,
+        rgba(6, 6, 6, 0.35) 0%,
+        rgba(6, 6, 6, 0.15) 30%,
+        rgba(6, 6, 6, 0.45) 70%,
         rgba(6, 6, 6, 1) 100%
     );
     pointer-events: none;
+    z-index: 2;
 }
 
 /* Navigation */
@@ -335,6 +349,15 @@ body {
     }
 }
 
+@keyframes topoDrift {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 280px 180px;
+    }
+}
+
 /* Elements start hidden */
 .animate-on-scroll {
     opacity: 0;
@@ -357,3 +380,9 @@ body {
 
 /* Disclaimer delays after etymology */
 .disclaimer.visible { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-bg::before {
+        animation: none;
+    }
+}
