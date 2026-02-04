@@ -48,10 +48,10 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500' viewBox='0 0 900 500' fill='none'><path d='M-40 80 C 120 20 260 120 420 70 C 560 30 700 140 940 80' stroke='%23324a55' stroke-width='1.2' opacity='0.7'/><path d='M-40 140 C 120 80 280 190 460 130 C 620 80 740 200 940 150' stroke='%23324a55' stroke-width='1' opacity='0.6'/><path d='M-40 210 C 140 150 300 260 500 210 C 660 170 760 260 940 220' stroke='%23324a55' stroke-width='1.1' opacity='0.6'/><path d='M-40 280 C 120 220 320 330 520 280 C 700 240 780 330 940 290' stroke='%23324a55' stroke-width='1' opacity='0.55'/><path d='M-40 350 C 140 300 340 390 540 350 C 700 320 820 390 940 360' stroke='%23324a55' stroke-width='1.1' opacity='0.5'/><path d='M-40 420 C 160 370 340 460 560 420 C 720 390 840 450 940 430' stroke='%23324a55' stroke-width='1' opacity='0.5'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500' viewBox='0 0 900 500' fill='none'><path d='M-40 80 C 120 20 260 120 420 70 C 560 30 700 140 940 80' stroke='%234b6c7a' stroke-width='1.4' opacity='0.75'/><path d='M-40 140 C 120 80 280 190 460 130 C 620 80 740 200 940 150' stroke='%234b6c7a' stroke-width='1.3' opacity='0.65'/><path d='M-40 210 C 140 150 300 260 500 210 C 660 170 760 260 940 220' stroke='%234b6c7a' stroke-width='1.3' opacity='0.65'/><path d='M-40 280 C 120 220 320 330 520 280 C 700 240 780 330 940 290' stroke='%234b6c7a' stroke-width='1.2' opacity='0.6'/><path d='M-40 350 C 140 300 340 390 540 350 C 700 320 820 390 940 360' stroke='%234b6c7a' stroke-width='1.2' opacity='0.55'/><path d='M-40 420 C 160 370 340 460 560 420 C 720 390 840 450 940 430' stroke='%234b6c7a' stroke-width='1.1' opacity='0.5'/></svg>");
     background-size: 900px 500px;
     background-repeat: repeat;
-    opacity: 0.22;
+    opacity: 0.32;
     animation: topoDrift 90s linear infinite;
     pointer-events: none;
     z-index: 1;
@@ -63,9 +63,9 @@ body {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(6, 6, 6, 0.35) 0%,
-        rgba(6, 6, 6, 0.15) 30%,
-        rgba(6, 6, 6, 0.45) 70%,
+        rgba(6, 6, 6, 0.3) 0%,
+        rgba(6, 6, 6, 0.12) 30%,
+        rgba(6, 6, 6, 0.4) 70%,
         rgba(6, 6, 6, 1) 100%
     );
     pointer-events: none;
