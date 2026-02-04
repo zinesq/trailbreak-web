@@ -32,10 +32,6 @@ body {
 /* Hero Background Section */
 .hero-bg {
     background-color: #060606;
-    background-image:
-        radial-gradient(1200px 600px at 15% -10%, rgba(56, 152, 236, 0.14) 0%, rgba(6, 6, 6, 0) 60%),
-        radial-gradient(900px 520px at 85% 0%, rgba(42, 76, 94, 0.18) 0%, rgba(6, 6, 6, 0) 55%),
-        linear-gradient(180deg, #050607 0%, #060606 45%, #050708 100%);
     position: relative;
     padding-bottom: 60px;
     min-height: calc(100vh - 60px);
@@ -47,13 +43,15 @@ body {
 .hero-bg::before {
     content: '';
     position: absolute;
-    inset: -12%;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2000' height='1200' viewBox='0 0 2000 1200' fill='none'><path d='M-200 120 C 120 10 360 220 650 140 C 960 40 1280 260 1700 120 C 1880 60 2050 120 2200 140' stroke='%236f8f9b' stroke-width='2' opacity='0.85'/><path d='M-220 260 C 80 170 420 360 760 250 C 1060 150 1370 360 1760 250 C 1940 200 2140 260 2220 280' stroke='%236f8f9b' stroke-width='1.8' opacity='0.75'/><path d='M-240 400 C 120 330 470 500 840 400 C 1160 310 1480 520 1860 420 C 2040 370 2160 420 2240 440' stroke='%236f8f9b' stroke-width='1.9' opacity='0.72'/><path d='M-240 540 C 140 470 520 640 900 540 C 1220 460 1540 660 1940 560 C 2100 520 2200 560 2300 600' stroke='%236f8f9b' stroke-width='1.7' opacity='0.68'/><path d='M-260 690 C 160 620 560 800 980 690 C 1300 600 1620 800 2020 700 C 2180 660 2280 700 2360 740' stroke='%236f8f9b' stroke-width='1.6' opacity='0.64'/><path d='M-260 840 C 180 770 600 950 1060 840 C 1360 760 1700 940 2100 860 C 2260 820 2360 860 2440 900' stroke='%236f8f9b' stroke-width='1.6' opacity='0.6'/><path d='M-280 1000 C 200 920 660 1100 1160 1000 C 1460 920 1800 1080 2200 1010 C 2360 980 2460 1020 2560 1060' stroke='%236f8f9b' stroke-width='1.5' opacity='0.58'/></svg>");
-    background-size: 180% 180%;
-    background-repeat: no-repeat;
-    background-position: 50% 30%;
-    opacity: 0.5;
-    animation: topoDrift 80s ease-in-out infinite alternate;
+    inset: -18%;
+    background-image:
+        radial-gradient(1200px 650px at 10% 5%, rgba(68, 150, 205, 0.28) 0%, rgba(6, 6, 6, 0) 60%),
+        radial-gradient(980px 720px at 88% 10%, rgba(36, 74, 98, 0.35) 0%, rgba(6, 6, 6, 0) 58%),
+        radial-gradient(1100px 900px at 55% 100%, rgba(20, 44, 60, 0.4) 0%, rgba(6, 6, 6, 0) 62%),
+        linear-gradient(180deg, #050607 0%, #060606 45%, #050708 100%);
+    background-size: 140% 140%, 160% 160%, 150% 150%, 100% 100%;
+    background-position: 10% 0%, 90% 0%, 50% 100%, 0 0;
+    animation: ambientShift 70s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: 1;
 }
@@ -62,13 +60,17 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(6, 6, 6, 0.3) 0%,
-        rgba(6, 6, 6, 0.12) 30%,
-        rgba(6, 6, 6, 0.4) 70%,
-        rgba(6, 6, 6, 1) 100%
-    );
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(6, 6, 6, 0.35) 0%,
+            rgba(6, 6, 6, 0.12) 30%,
+            rgba(6, 6, 6, 0.45) 70%,
+            rgba(6, 6, 6, 1) 100%
+        ),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.08'/></svg>");
+    background-size: 100% 100%, 160px 160px;
+    background-repeat: no-repeat, repeat;
     pointer-events: none;
     z-index: 2;
 }
@@ -350,12 +352,12 @@ body {
     }
 }
 
-@keyframes topoDrift {
+@keyframes ambientShift {
     from {
-        background-position: 48% 26%;
+        background-position: 12% 2%, 88% 6%, 50% 100%, 0 0;
     }
     to {
-        background-position: 52% 34%;
+        background-position: 4% 12%, 96% 0%, 44% 90%, 0 0;
     }
 }
 
@@ -385,11 +387,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .hero-bg::before {
         animation: none;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-bg::before {
-        opacity: 0.6;
     }
 }
