@@ -31,51 +31,31 @@ body {
 
 /* Hero Background Section */
 .hero-bg {
-    background-color: #060606;
+    background-image: url('images/hero-bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     position: relative;
     padding-bottom: 60px;
     min-height: calc(100vh - 60px);
     min-height: calc(100svh - 60px);
-    overflow: hidden;
-    isolation: isolate;
 }
 
 .hero-bg::before {
     content: '';
     position: absolute;
-    inset: -18%;
-    background-image:
-        radial-gradient(1400px 700px at 50% 38%, rgba(86, 170, 220, 0.32) 0%, rgba(6, 6, 6, 0) 66%),
-        radial-gradient(1100px 700px at 50% 65%, rgba(40, 80, 110, 0.5) 0%, rgba(6, 6, 6, 0) 70%),
-        radial-gradient(1200px 650px at 10% 5%, rgba(78, 170, 225, 0.42) 0%, rgba(6, 6, 6, 0) 64%),
-        radial-gradient(980px 720px at 88% 10%, rgba(46, 94, 122, 0.5) 0%, rgba(6, 6, 6, 0) 62%),
-        radial-gradient(1100px 900px at 55% 100%, rgba(26, 60, 84, 0.6) 0%, rgba(6, 6, 6, 0) 66%),
-        radial-gradient(900px 620px at 30% 60%, rgba(20, 40, 56, 0.4) 0%, rgba(6, 6, 6, 0) 62%),
-        linear-gradient(180deg, #050607 0%, #060606 45%, #050708 100%);
-    background-size: 170% 170%, 180% 180%, 150% 150%, 180% 180%, 165% 165%, 140% 140%, 100% 100%;
-    background-position: 50% 35%, 50% 65%, 10% 0%, 90% 0%, 50% 100%, 30% 60%, 0 0;
-    animation: ambientShift 70s ease-in-out infinite alternate;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(6, 6, 6, 0.3) 0%,
+        rgba(6, 6, 6, 0.1) 30%,
+        rgba(6, 6, 6, 0.4) 70%,
+        rgba(6, 6, 6, 1) 100%
+    );
     pointer-events: none;
-    z-index: 1;
-}
-
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(6, 6, 6, 0.35) 0%,
-            rgba(6, 6, 6, 0.12) 30%,
-            rgba(6, 6, 6, 0.45) 70%,
-            rgba(6, 6, 6, 1) 100%
-        ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.22'/></svg>");
-    background-size: 100% 100%, 200px 200px;
-    background-repeat: no-repeat, repeat;
-    pointer-events: none;
-    z-index: 2;
 }
 
 /* Navigation */
@@ -355,15 +335,6 @@ body {
     }
 }
 
-@keyframes ambientShift {
-    from {
-        background-position: 50% 34%, 50% 63%, 12% 2%, 88% 6%, 50% 100%, 32% 62%, 0 0;
-    }
-    to {
-        background-position: 50% 40%, 50% 70%, 4% 12%, 96% 0%, 44% 90%, 28% 52%, 0 0;
-    }
-}
-
 /* Elements start hidden */
 .animate-on-scroll {
     opacity: 0;
@@ -386,9 +357,3 @@ body {
 
 /* Disclaimer delays after etymology */
 .disclaimer.visible { animation-delay: 0.3s; }
-
-@media (prefers-reduced-motion: reduce) {
-    .hero-bg::before {
-        animation: none;
-    }
-}
